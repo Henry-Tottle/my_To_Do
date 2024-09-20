@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Slim 4</title>
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+<h1>DONE</h1>
+<div>You've done these things: </div>
+<?PHP
+foreach ($completedArray as $completedTask)
+{
+    echo '<form method="post" action="/delete"><h4>' . $completedTask['to_do_message'] . '</h4>';
+    echo '<input type="submit" name="'.$completedTask['id'].'" value="Delete"></form>';
+}
+?>
+<br>
+<a href="/"><h4>back</h4></a>
+</body>
+</html>
