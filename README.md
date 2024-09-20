@@ -1,8 +1,6 @@
-# Slim Framework 4 Skeleton Application
+# Henry's To Do App
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 4 application. This application uses the latest Slim 4 with Slim PSR-7 implementation and PHP-DI container implementation along with the PHP-View template renderer. It also uses the Monolog logger.
-
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+Using MVC architecture and the slim framework I have created a CRUD application for a to do list.  Through doing this I have demonstrated an understanding of SQL, object oriented programming in PHP as well as front end development using html and CSS.
 
 ## Install the Application
 
@@ -16,7 +14,7 @@ mkdir academyProject
 Once inside the new directory, clone this repo:
 
 ```bash
-git clone git@github.com:Mayden-Academy/slim4-skeleton.git .
+git clone git@github.com:Henry-Tottle/my_To_Do.git .
 ```
 
 One cloned, you must install the slim components by running:
@@ -35,4 +33,4 @@ Run this command in the application directory to run the test suite
 composer test
 ```
 
-That's it! Now go build something cool.
+Now start scheduling!
