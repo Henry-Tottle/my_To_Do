@@ -13,7 +13,7 @@ class ToDoModel
     }
     public function getToDos()
     {
-        $query = $this->db->prepare('SELECT `id`, `user_id`, `to_do_message`, `completed`, `created`  FROM `to_do` WHERE `completed` = 0');
+        $query = $this->db->prepare('SELECT `id`, `user_id`, `to_do_message`, `completed`, `created`  FROM `to_do` WHERE `completed` = 0 ORDER BY `created` DESC');
         $query->execute();
         return $query->fetchAll();
     }

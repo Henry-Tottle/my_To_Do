@@ -12,21 +12,26 @@
 <div>
 <form method="post" action="/add">
     <p><label for="newToDo">New to do: </label></p>
-    <input type="text" id="newToDo" name="newToDo" placeholder="What do you need to do?">
-    <input type="submit" value="Add to do">
+    <div class="newToDoDiv">
+        <input class="textInputBox" type="text" id="newToDo" name="newToDo" placeholder="What do you need to do?">
+        <input class="textInputBox" type="submit" value="Add to do">
+    </div>
 </form>
 </div>
 <br>
 <h2>Do these things: </h2>
+<div class="toDoBoard">
 <?PHP
 foreach ($toDoArray as $toDo)
 {
+    echo '<div class="eachToDoDiv">';
     echo '<h4>' . $toDo['to_do_message'] . '</h4>';
-    echo '<div style="display: flex; justify-content: center; gap: 3px;"><form method="post" action="/done"><input type="submit" name="'.$toDo['id'].'" value="✓"></form>';
+    echo '<div><form method="post" action="/done"><input type="submit" name="'.$toDo['id'].'" value="✓"></form>';
     echo '<form method="get" action="/edit/'.$toDo['id'].'"><input type="submit" name="'.$toDo['id'].'" value="✎"></form></div>';
-
+    echo '</div>';
 }
 ?>
+</div>
 <br>
 <br>
 <a href="/complete"><h2>Completed Tasks</h2></a>
