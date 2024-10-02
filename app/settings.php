@@ -22,7 +22,10 @@ return function (ContainerBuilder $containerBuilder) {
                 'name' => 'dbname=todo_list_app',
                 'user' => 'root',
                 'password' => 'password',
-                'debug' => true
+                'debug' => true,
+                'options'=> [
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
             ]
         ],
     ]);

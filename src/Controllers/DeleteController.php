@@ -17,8 +17,7 @@ class DeleteController
 
     public function __invoke($request, $response, $args)
     {
-        //if you are looking at this in the future, it would be more efficient to use ARGS
-
+        //if you are looking at this in the future, it would be more efficient to use ARG
         $delete = $request->getParsedBody();
         $taskId = array_key_first($delete);
         return $this->renderer->render($response->withHeader('Location', '/complete')->withStatus(301), 'completedPage.phtml',['markDeleted'=>$this->toDoModel->deleteToDo($taskId)]);

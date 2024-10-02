@@ -13,7 +13,7 @@ class ToDoModel
     }
     public function getToDos()
     {
-        $query = $this->db->prepare('SELECT `id`, `user_id`, `to_do_message`, `completed`, `created`  FROM `to_do` WHERE `completed` = 0 ORDER BY `created` DESC');
+        $query = $this->db->prepare('SELECT `id`, `user_id`, `to_do_message`, `completed`, `created`, `deadline`  FROM `to_do` WHERE `completed` = 0 ORDER BY `created` ASC');
         $query->execute();
         return $query->fetchAll();
     }
@@ -32,10 +32,10 @@ class ToDoModel
         return $query->fetchAll();
     }
 
-    public function setToDos($newToDo)
+    public function setToDos($newToDo, $date)
     {
-        $query = $this->db->prepare('INSERT INTO `to_do` (`to_do_message`) VALUES (:message)');
-        $query->execute(['message'=>$newToDo]);
+        $query = $this->db->prepare('INSERT INTO `to_do` (`to_do_message`, `deadline`) VALUES (:message, :deadline)');
+        $query->execute(['message'=>$newToDo, 'deadline'=>$date]);
     }
 
     public function setComplete($complete)

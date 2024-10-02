@@ -18,7 +18,9 @@ class SetToDoController
     public function __invoke($request, $response)
     {
         $data = $request->getParsedBody();
-        $this->toDoModel->setToDos($data['newToDo']);
+        $date = $data['newToDoDate'];
+        date('Y/m/d', strtotime($date));
+        $this->toDoModel->setToDos($data['newToDo'],$date);
         return $this->renderer->render($response->withHeader('Location', '/')->withStatus(301), 'toDoPage.phtml');
 
     }

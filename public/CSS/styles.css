@@ -51,3 +51,13 @@ input[type=submit] {
     border: 1px solid;
     font-size: 20pt;
 }
+
+.calendar {
+    height:50%;
+    width: 50%;
+}
+
+.calendar_flex {
+    display: flex;
+    justify-content: center;
+}
