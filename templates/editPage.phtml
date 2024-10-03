@@ -11,7 +11,11 @@
 <br>
 <h2>Current task to edit: <br><?= $singleToDoArray['to_do_message']?></h2>
 <h2>Change to: </h2>
-<form method="post" action="/edit/<?= $singleToDoArray['id'] ?>'"><input type="text" name="<?= $singleToDoArray['id'] ?>"><input type="submit" value="edit"></form>
+<form method="post" action="/edit/<?= $singleToDoArray['id'] ?>'">
+    <input type="text" name="<?= $singleToDoArray['id'] ?>">
+    <label for="editDate">Edit date</label>
+    <input type="date" name="editDate" id="editDate" class="textInputBox">
+    <input type="submit" value="edit"></form>
 <br>
 <br>
 <a href="/complete"><h2>Completed Tasks</h2></a>

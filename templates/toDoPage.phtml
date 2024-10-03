@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8"/>
     <title>Slim 4</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
@@ -16,7 +17,13 @@
                 events: toDos.map(toDo => { return {
                     title: toDo.to_do_message,
                         start: toDo.deadline
-                }})
+                }}),
+                eventClick: function(info) {
+                    alert('Task: ' + info.event.title + 'Deadline: ' + info.event.start);
+
+                    // change the border color just for fun
+                    info.el.style.borderColor = 'red';
+                }
             });
             calendar.render();
         });
