@@ -20,7 +20,7 @@ class ToDoModel
 
     public function getToDo($id)
     {
-        $query = $this->db->prepare('SELECT `id`, `user_id`, `to_do_message`, `completed`, `created`  FROM `to_do` WHERE `id` = :id');
+        $query = $this->db->prepare('SELECT `id`, `user_id`, `to_do_message`, `completed`, `created`, `deadline`  FROM `to_do` WHERE `id` = :id');
         $query->execute(['id'=>$id]);
         return $query->fetch();
     }
@@ -50,9 +50,9 @@ class ToDoModel
         $query->execute(['id'=>$id]);
     }
 
-    public function editToDo($id, $updatedMessage)
+    public function editToDo($id, $updatedMessage, $updatedDate)
     {
-        $query = $this->db->prepare('UPDATE `to_do` SET `to_do_message` = :updatedMessage WHERE `id` = :id');
-        $query->execute(['updatedMessage'=>$updatedMessage, 'id'=>$id]);
+        $query = $this->db->prepare('UPDATE `to_do` SET `to_do_message` = :updatedMessage, `deadline` = :updatedDate WHERE `id` = :id');
+        $query->execute(['updatedMessage'=>$updatedMessage, 'id'=>$id, 'updatedDate' => $updatedDate]);
     }
 }

@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="/CSS/styles.css">
 </head>
 <body>
+<a href="/">HOME</a>
+<a href="/complete"><h2>Completed Tasks</h2></a>
+
 <h1>To Do List</h1>
 <br>
 <h2>Current task to edit: <br><?= $singleToDoArray['to_do_message']?></h2>
 <h2>Change to: </h2>
 <form method="post" action="/edit/<?= $singleToDoArray['id'] ?>'">
-    <input type="text" name="<?= $singleToDoArray['id'] ?>">
+    <div class="newToDoDiv">
+    <input type="text" name="<?= $singleToDoArray['id'] ?>" value="<?= $singleToDoArray['to_do_message']?>">
     <label for="editDate">Edit date</label>
-    <input type="date" name="editDate" id="editDate" class="textInputBox">
+    <input type="date" name="editDate" id="editDate" class="textInputBox" value="<?= $singleToDoArray['deadline'] ?>">
     <input type="submit" value="edit"></form>
+    </div>
 <br>
 <br>
-<a href="/complete"><h2>Completed Tasks</h2></a>
-<a href="/">HOME</a>
+
 </body>
 </html>

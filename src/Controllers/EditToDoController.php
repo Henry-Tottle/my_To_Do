@@ -22,7 +22,8 @@ class EditToDoController
         $editData = $request->getParsedBody();
         $id = array_key_first($editData);
         $message = $editData[$id];
+        $date = $editData['editDate'];
         return $this->renderer->render($response->withHeader('Location', "/")->withStatus(301),
-            'editPage.phtml',['editToDo'=>$this->toDoModel->editToDo($id, $message)]);
+            'editPage.phtml',['editToDo'=>$this->toDoModel->editToDo($id, $message, $date)]);
     }
 }

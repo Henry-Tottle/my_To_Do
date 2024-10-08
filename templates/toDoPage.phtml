@@ -31,7 +31,14 @@
     </script>
 </head>
 <body>
+<a href="/complete"><h2>Completed Tasks</h2></a>
 <h1>To Do List</h1>
+
+<div class="calendar_flex">
+    <div class="calendar">
+        <div id='calendar'></div>
+    </div>
+</div>
 <h2>Add to do:</h2>
 <div>
 <form method="post" action="/add">
@@ -60,12 +67,7 @@ foreach ($toDoArray as $toDo)
 </div>
 <br>
 <br>
-<a href="/complete"><h2>Completed Tasks</h2></a>
-<div class="calendar_flex">
-    <div class="calendar">
-        <div id='calendar'></div>
-    </div>
-</div>
+
 
 
 </body>
